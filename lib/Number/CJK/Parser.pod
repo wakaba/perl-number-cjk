@@ -1,0 +1,38 @@
+=encoding utf-8
+
+=head1 NAME
+
+Number::CJK::Parser - Parsing CJK numbers (漢数字)
+
+=head1 SYNOPSIS
+
+  use Number::CJK::Parser;
+  $n = parse_cjk_number q{五億二千万十二};
+  warn $n; # 520000012
+
+=head1 DESCRIPTION
+
+The C<Number::CJK::Parser> module exports a function,
+C<parse_cjk_number>, which converts a CJK number (漢数字) into a Perl
+number.
+
+A utf8 string must be specified as the argument.  If it is a valid CJK
+number, corresponding Perl number is returned.  Otherwise, C<undef> is
+returned instead.
+
+=head1 SPECIFICATION
+
+Numbers <https://manakai.github.io/spec-numbers/>.
+
+=head1 AUTHOR
+
+Wakaba <wakaba@suikawiki.org>.
+
+=head1 LICENSE
+
+Copyright 2015 Wakaba <wakaba@suikawiki.org>.
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
+
+=cut
