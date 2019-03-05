@@ -16,9 +16,9 @@ The C<Number::CJK::Parser> module exports a function,
 C<parse_cjk_number>, which converts a CJK number (漢数字) into a Perl
 number.
 
-A utf8 string must be specified as the argument.  If it is a valid CJK
-number, corresponding Perl number is returned.  Otherwise, C<undef> is
-returned instead.
+The argument to the function must be a utf8-flagged string.  If it is
+a valid CJK number, a Perl number which is equal to the CJK number is
+returned.  Otherwise, C<undef> is returned.
 
 =head1 SPECIFICATION
 
@@ -30,7 +30,7 @@ Wakaba <wakaba@suikawiki.org>.
 
 =head1 LICENSE
 
-Copyright 2015 Wakaba <wakaba@suikawiki.org>.
+Copyright 2015-2019 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

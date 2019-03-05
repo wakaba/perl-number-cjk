@@ -6,8 +6,9 @@ $HundredMillion = qr{[\x{5104}]};
 $TenThousand = qr{[\x{4E07}\x{842C}]};
 $Thousand = qr{[\x{4EDF}\x{5343}\x{9621}]};
 $Hundred = qr{[\x{4F70}\x{767E}\x{964C}]};
+$MultipleHundreds = qr{[\x{7695}]};
 $Ten = qr{[\x{5341}\x{62FE}]};
-$MultipleTens = qr{[\x{4E17}\x{5344}-\x{5345}\x{534C}\x{5EFF}]};
+$MultipleTens = qr{[\x{4E17}\x{5344}-\x{5345}\x{534C}\x{5EFE}-\x{5EFF}]};
 $Value = $VAR1 = {
           '0' => 0,
           '1' => 1,
@@ -49,6 +50,7 @@ $Value = $VAR1 = {
           "\x{56db}" => 4,
           "\x{58f1}" => 1,
           "\x{58f9}" => 1,
+          "\x{5efe}" => 20,
           "\x{5eff}" => 20,
           "\x{5f0c}" => 1,
           "\x{5f0d}" => 2,
@@ -60,6 +62,7 @@ $Value = $VAR1 = {
           "\x{6f06}" => 7,
           "\x{7396}" => 9,
           "\x{767e}" => 100,
+          "\x{7695}" => 200,
           "\x{8086}" => 4,
           "\x{842c}" => 10000,
           "\x{8cae}" => 2,

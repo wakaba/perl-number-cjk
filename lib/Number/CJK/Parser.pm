@@ -1,7 +1,7 @@
 package Number::CJK::Parser;
 use strict;
 use warnings;
-our $VERSION = '1.0';
+our $VERSION = '2.0';
 use Carp;
 
 use Number::CJK::_Classes;
@@ -12,6 +12,7 @@ our $HundredMillion;
 our $TenThousand;
 our $Thousand;
 our $Hundred;
+our $MultipleHundreds;
 our $Ten;
 our $MultipleTens;
 our $Value;
@@ -47,7 +48,7 @@ sub _parse_small ($) {
   if ($_[0] =~ s/^($Digit)($Hundred)//o) {
     $value += $Value->{$1} * $Value->{$2};
     $removed = 1;
-  } elsif ($_[0] =~ s/^($Hundred)//o) {
+  } elsif ($_[0] =~ s/^($Hundred|$MultipleHundreds)//o) {
     $value += $Value->{$1};
     $removed = 1;
   }
@@ -115,7 +116,7 @@ sub parse_cjk_number ($) {
 
 =head1 LICENSE
 
-Copyright 2015 Wakaba <wakaba@suikawiki.org>.
+Copyright 2015-2019 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.

@@ -50,6 +50,7 @@ lib/Number/CJK/_Classes.pm:
 	    --form 'item=$$TenThousand=$$numbers:CJK-ten-thousand' \
 	    --form 'item=$$Thousand=$$numbers:CJK-thousand' \
 	    --form 'item=$$Hundred=$$numbers:CJK-hundred' \
+	    --form 'item=$$MultipleHundreds=$$numbers:CJK-multiple-hundreds' \
 	    --form 'item=$$Ten=$$numbers:CJK-ten' \
 	    --form 'item=$$MultipleTens=$$numbers:CJK-multiple-tens' >> $@
 	curl -f -L https://raw.githubusercontent.com/manakai/data-chars/master/data/number-values.json | \
