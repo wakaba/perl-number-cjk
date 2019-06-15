@@ -1,14 +1,19 @@
 package Number::CJK::Parser;
 $Digit = qr{[0-9\x{3007}\x{4E00}\x{4E03}\x{4E09}\x{4E5D}\x{4E8C}\x{4E94}\x{4E96}\x{4F0D}\x{516B}\x{516D}\x{53C1}-\x{53C4}\x{56DB}\x{58F1}\x{58F9}\x{5F0C}-\x{5F0E}\x{5F10}\x{634C}\x{67D2}\x{6F06}\x{7396}\x{8086}\x{8CAE}\x{8CB3}\x{8CEA}\x{8D30}\x{9646}\x{9678}\x{96F6}\x{FF10}-\x{FF19}]};
+$And = qr{[\x{6709}]};
+$Dot = qr{[.\x{30FB}\x{FF0E}]};
+$Sep = qr{[\x20,\xA0\xB7\x{2009}\x{202F}\x{FF0C}]};
+$NonZero = qr{[1-9\x{4E00}\x{4E03}\x{4E09}\x{4E5D}\x{4E8C}\x{4E94}\x{4E96}\x{4F0D}\x{516B}\x{516D}\x{53C1}-\x{53C4}\x{56DB}\x{58F1}\x{58F9}\x{5F0C}-\x{5F0E}\x{5F10}\x{634C}\x{67D2}\x{6F06}\x{7396}\x{8086}\x{8CAE}\x{8CB3}\x{8CEA}\x{8D30}\x{9646}\x{9678}\x{FF11}-\x{FF19}]};
+$Zero = qr{[0\x{3007}\x{96F6}\x{FF10}]};
 $TenQuadrillion = qr{[\x{4EAC}]};
 $Trillion = qr{[\x{5146}]};
-$HundredMillion = qr{[\x{5104}]};
+$HundredMillion = qr{[\x{4EBF}\x{5104}]};
 $TenThousand = qr{[\x{4E07}\x{842C}]};
 $Thousand = qr{[\x{4EDF}\x{5343}\x{9621}]};
 $Hundred = qr{[\x{4F70}\x{767E}\x{964C}]};
 $MultipleHundreds = qr{[\x{7695}]};
 $Ten = qr{[\x{5341}\x{62FE}]};
-$MultipleTens = qr{[\x{4E17}\x{5344}-\x{5345}\x{534C}\x{5EFE}-\x{5EFF}]};
+$MultipleTens = qr{[\x{4E17}\x{5344}-\x{5345}\x{534C}\x{5EFE}-\x{5EFF}\x{2099C}]};
 $Value = $VAR1 = {
           '0' => 0,
           '1' => 1,
@@ -31,6 +36,7 @@ $Value = $VAR1 = {
           "\x{4e94}" => 5,
           "\x{4e96}" => 4,
           "\x{4eac}" => '10000000000000000',
+          "\x{4ebf}" => 100000000,
           "\x{4edf}" => 1000,
           "\x{4f0d}" => 5,
           "\x{4f70}" => 100,
@@ -83,6 +89,7 @@ $Value = $VAR1 = {
           "\x{ff16}" => 6,
           "\x{ff17}" => 7,
           "\x{ff18}" => 8,
-          "\x{ff19}" => 9
+          "\x{ff19}" => 9,
+          "\x{2099c}" => 40
         };
 ;1;

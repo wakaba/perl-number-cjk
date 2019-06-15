@@ -10,7 +10,7 @@ use Number::CJK::Parser;
 use TestData;
 our $Tests;
 
-for my $input (keys %$Tests) {
+for my $input (sort { $a cmp $b } keys %$Tests) {
   my $expected = $Tests->{$input};
   test {
     my $c = shift;
@@ -24,7 +24,7 @@ run_tests;
 
 =head1 LICENSE
 
-Copyright 2015 Wakaba <wakaba@suikawiki.org>.
+Copyright 2015-2019 Wakaba <wakaba@suikawiki.org>.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
